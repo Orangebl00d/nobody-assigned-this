@@ -7,8 +7,10 @@
 ## Backend (Supabase)
 - None (static content)
 
-## Deployed Services (Railway)
-- None
+## Deployed Services
+- GitHub Pages (main, root): https://orangebl00d.github.io/nobody-assigned-this/
+  - Page: https://orangebl00d.github.io/nobody-assigned-this/nobody-assigned-this.html
+  - index.html redirects to the page
 - Published artifact (private until shared): https://claude.ai/artifact/9d3aJuiXE1PjhjajTVwdmv
 
 ## Environment Variables Required

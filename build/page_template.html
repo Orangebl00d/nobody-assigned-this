@@ -1,0 +1,319 @@
+<title>Nobody Assigned This</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@600&display=swap">
+<style>
+:root {
+  --paper: #F3F4EF;
+  --surface: #FFFFFF;
+  --sunk: #E9EBE4;
+  --ink: #181D24;
+  --muted: #58606C;
+  --rule: #D6D9CF;
+  --pen: #2143C4;
+  --pen-soft: rgba(33, 67, 196, 0.08);
+  --hi: #F4DE45;
+  --seg-a: #2143C4;
+  --seg-b: #8298E8;
+  --seg-c: #E8D23C;
+  --seg-d: #B7BDC6;
+  --seg-e: #181D24;
+  --seg-f: #6C7584;
+  --display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --body: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --hand: "Caveat", "Bradley Hand", "Segoe Print", cursive;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --paper: #111419;
+    --surface: #181C22;
+    --sunk: #1F242B;
+    --ink: #E5E7E1;
+    --muted: #9CA3AE;
+    --rule: #2D333C;
+    --pen: #93A8FF;
+    --pen-soft: rgba(147, 168, 255, 0.10);
+    --hi: rgba(244, 222, 69, 0.30);
+    --seg-a: #93A8FF;
+    --seg-b: #4F63B8;
+    --seg-c: #D9C43A;
+    --seg-d: #4A515C;
+    --seg-e: #E5E7E1;
+    --seg-f: #8D95A2;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #111419;
+  --surface: #181C22;
+  --sunk: #1F242B;
+  --ink: #E5E7E1;
+  --muted: #9CA3AE;
+  --rule: #2D333C;
+  --pen: #93A8FF;
+  --pen-soft: rgba(147, 168, 255, 0.10);
+  --hi: rgba(244, 222, 69, 0.30);
+  --seg-a: #93A8FF;
+  --seg-b: #4F63B8;
+  --seg-c: #D9C43A;
+  --seg-d: #4A515C;
+  --seg-e: #E5E7E1;
+  --seg-f: #8D95A2;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: calc(64px + env(safe-area-inset-top, 0px)); }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 17px;
+  line-height: 1.6;
+  padding-inline: 16px;
+}
+a { color: var(--pen); text-underline-offset: 2px; }
+a:focus-visible, input:focus-visible, summary:focus-visible { outline: 2px solid var(--pen); outline-offset: 2px; border-radius: 3px; }
+
+/* ---------- nav ---------- */
+.nav {
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 10;
+  background: var(--paper);
+  border-bottom: 1px solid var(--rule);
+  margin-inline: -16px;
+  padding: 10px 16px;
+}
+.nav-inner {
+  max-width: 1080px; margin: 0 auto;
+  display: flex; flex-wrap: wrap; align-items: center; gap: 6px 18px;
+}
+.nav-brand { font-family: var(--display); font-weight: 800; font-size: 15px; color: var(--ink); text-decoration: none; margin-right: auto; }
+.nav a:not(.nav-brand) { font-family: var(--mono); font-size: 13px; color: var(--muted); text-decoration: none; }
+.nav a:not(.nav-brand):hover { color: var(--pen); }
+
+.wrap { max-width: 1080px; margin: 0 auto; }
+
+/* ---------- hero: an assignment header nobody filled in ---------- */
+.hero { padding-block: 48px 36px; display: grid; grid-template-columns: minmax(0, 1fr); gap: 28px; }
+.slip {
+  font-family: var(--mono); font-size: 13px; color: var(--muted);
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(min(190px, 100%), 1fr)); gap: 10px 28px;
+  max-width: 820px;
+}
+.slip div { display: flex; align-items: baseline; gap: 8px; border-bottom: 1px solid var(--rule); padding-bottom: 4px; }
+.slip dt { flex: none; text-transform: uppercase; letter-spacing: .08em; font-size: 11px; white-space: nowrap; }
+.slip dd { margin: 0; font-family: var(--hand); font-size: 24px; line-height: 1; color: var(--pen); }
+.hero h1 {
+  font-family: var(--display); font-weight: 800;
+  font-size: clamp(44px, 8.5vw, 104px); line-height: .92; letter-spacing: -0.035em;
+  margin: 0; text-wrap: balance;
+}
+.hero h1 .struck { position: relative; white-space: nowrap; }
+.hero h1 .struck::after {
+  content: ""; position: absolute; left: -2%; right: -2%; top: 52%;
+  height: .09em; background: var(--pen); transform: rotate(-2.5deg); border-radius: 2px;
+}
+.hero .sub { font-family: var(--display); font-weight: 500; font-size: clamp(19px, 2.4vw, 24px); color: var(--muted); margin: 0; max-width: 34ch; line-height: 1.3; }
+.hero-cols { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 40px; align-items: start; }
+@media (max-width: 760px) { .hero-cols { grid-template-columns: minmax(0, 1fr); gap: 28px; } }
+.big-idea { font-size: 19px; line-height: 1.6; max-width: 62ch; margin: 0; }
+.big-idea mark { background: linear-gradient(transparent 55%, var(--hi) 55%); color: inherit; padding: 0 2px; }
+.walk h2, .rules h2 { font-family: var(--mono); font-weight: 500; font-size: 12px; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); margin: 0 0 10px; }
+.walk ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; }
+.walk li { padding-left: 22px; position: relative; font-size: 16px; line-height: 1.45; }
+.walk li::before { content: "→"; position: absolute; left: 0; color: var(--pen); font-family: var(--mono); }
+.rules { margin-top: 24px; background: var(--surface); border: 1px solid var(--rule); border-radius: 6px; padding: 16px 18px; }
+.rules ol { margin: 0; padding-left: 20px; display: grid; gap: 6px; font-size: 15px; line-height: 1.45; }
+
+/* ---------- sections ---------- */
+section.part { padding-block: 44px; border-top: 1px solid var(--rule); }
+.part-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 16px; margin-bottom: 20px; }
+.part-head h2 {
+  font-family: var(--display); font-weight: 800; font-size: clamp(30px, 4.6vw, 46px);
+  letter-spacing: -0.02em; line-height: 1.05; margin: 0; text-wrap: balance;
+}
+.part-head h2 span { background: linear-gradient(transparent 58%, var(--hi) 58%); padding: 0 4px; }
+.part-head p { margin: 0; font-family: var(--mono); font-size: 13px; color: var(--muted); }
+
+/* ---------- prose ---------- */
+.prose { max-width: 720px; }
+.prose > * + * { margin-top: 0; }
+.prose p, .prose ul, .prose ol { margin: 0 0 14px; }
+.prose ul, .prose ol { padding-left: 22px; }
+.prose li { margin-bottom: 6px; }
+.prose li > ul, .prose li > ol { margin-top: 6px; }
+.prose h3 { font-family: var(--display); font-weight: 700; font-size: 26px; letter-spacing: -0.01em; line-height: 1.15; margin: 36px 0 12px; text-wrap: balance; }
+.prose h4 {
+  font-family: var(--display); font-weight: 700; font-size: 19px; line-height: 1.25;
+  margin: 30px 0 10px; text-wrap: balance;
+}
+.prose h5 { font-family: var(--mono); font-weight: 500; font-size: 12px; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); margin: 24px 0 8px; }
+.prose strong { font-weight: 600; }
+.prose hr { border: 0; border-top: 1px dashed var(--rule); margin: 28px 0; }
+.prose blockquote {
+  margin: 0 0 16px; padding: 12px 16px; background: var(--surface);
+  border: 1px solid var(--rule); border-left: 3px solid var(--pen); border-radius: 0 6px 6px 0;
+  font-size: 16px;
+}
+.prose blockquote p:last-child { margin-bottom: 0; }
+.prose code { font-family: var(--mono); font-size: .88em; background: var(--sunk); padding: 1px 5px; border-radius: 3px; }
+
+.table-wrap { overflow-x: auto; margin: 0 0 18px; border: 1px solid var(--rule); border-radius: 6px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; font-size: 15px; line-height: 1.45; }
+th, td { text-align: left; vertical-align: top; padding: 9px 12px; border-bottom: 1px solid var(--rule); }
+th { font-family: var(--mono); font-weight: 500; font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); background: var(--sunk); white-space: nowrap; }
+tr:last-child td { border-bottom: 0; }
+td { font-variant-numeric: tabular-nums; }
+.wide .prose { max-width: 100%; }
+.wide .prose p, .wide .prose ul, .wide .prose ol, .wide .prose blockquote, .wide .prose h3, .wide .prose h4 { max-width: 720px; }
+#overview .table-wrap table { min-width: 720px; }
+.rubric .prose > .table-wrap:last-of-type table { min-width: 880px; }
+
+/* checklists */
+ul.tasks { list-style: none; padding-left: 0; }
+li.task label { display: flex; gap: 10px; align-items: flex-start; cursor: pointer; }
+li.task input { margin-top: 5px; width: 17px; height: 17px; accent-color: var(--pen); flex: none; }
+li.task input:checked + span { color: var(--muted); text-decoration: line-through; text-decoration-color: var(--pen); }
+
+/* ---------- sessions ---------- */
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 8px; }
+.chip {
+  font-family: var(--mono); font-size: 13px; text-decoration: none; color: var(--ink);
+  border: 1px solid var(--rule); background: var(--surface); border-radius: 999px; padding: 5px 12px;
+}
+.chip b { color: var(--pen); font-weight: 500; margin-right: 4px; }
+.chip:hover { border-color: var(--pen); }
+.session { padding-block: 36px 8px; }
+.session + .session { border-top: 1px dashed var(--rule); }
+.session-head { display: grid; grid-template-columns: 92px minmax(0, 1fr); gap: 20px; align-items: start; margin-bottom: 18px; max-width: 820px; }
+@media (max-width: 560px) { .session-head { grid-template-columns: 60px minmax(0, 1fr); gap: 14px; } }
+.session-num {
+  font-family: var(--display); font-weight: 800; font-size: clamp(56px, 9vw, 88px); line-height: .8;
+  color: var(--pen); letter-spacing: -0.04em; display: grid;
+}
+.session-num span { font-family: var(--mono); font-weight: 500; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+.session-title h3 { font-family: var(--display); font-weight: 800; font-size: clamp(26px, 3.6vw, 36px); line-height: 1.05; letter-spacing: -0.02em; margin: 14px 0 14px; text-wrap: balance; }
+.timebar { display: flex; gap: 2px; height: 12px; border-radius: 3px; overflow: hidden; }
+.seg { display: block; min-width: 4px; }
+.seg-a { background: var(--seg-a); } .seg-b { background: var(--seg-b); } .seg-c { background: var(--seg-c); }
+.seg-d { background: var(--seg-d); } .seg-e { background: var(--seg-e); } .seg-f { background: var(--seg-f); }
+.legend { list-style: none; margin: 8px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px 14px; font-family: var(--mono); font-size: 12px; color: var(--muted); }
+.legend li { display: flex; align-items: center; gap: 6px; }
+.legend b { color: var(--ink); font-weight: 500; font-variant-numeric: tabular-nums; }
+.legend .legend-total { color: var(--ink); font-weight: 500; }
+.sw { width: 9px; height: 9px; border-radius: 2px; display: inline-block; }
+
+/* parents */
+details.keys { margin-top: 28px; border: 1px solid var(--rule); border-radius: 6px; background: var(--surface); max-width: 880px; }
+details.keys summary { cursor: pointer; padding: 14px 18px; font-family: var(--display); font-weight: 700; font-size: 18px; }
+details.keys summary small { font-family: var(--mono); font-weight: 400; font-size: 12px; color: var(--muted); margin-left: 8px; }
+details.keys .prose { padding: 0 18px 12px; max-width: 100%; }
+
+footer { padding-block: 32px 48px; border-top: 1px solid var(--rule); font-family: var(--mono); font-size: 12px; color: var(--muted); }
+</style>
+
+<nav class="nav" aria-label="Course sections">
+  <div class="nav-inner">
+    <a class="nav-brand" href="#top">Nobody Assigned This</a>
+    <a href="#overview">Schedule</a>
+    <a href="#sessions">Sessions</a>
+    <a href="#capstone">Capstone</a>
+    <a href="#journal">Journal</a>
+    <a href="#quizzes">Quizzes</a>
+    <a href="#parents">Parents</a>
+  </div>
+</nav>
+
+<main class="wrap" id="top">
+  <header class="hero">
+    <dl class="slip">
+      <div><dt>Assigned by</dt><dd>nobody</dd></div>
+      <div><dt>Due</dt><dd>whenever you decide</dd></div>
+      <div><dt>Length</dt><dd>2 weeks · 8 sessions</dd></div>
+    </dl>
+    <div>
+      <h1>Nobody <span class="struck">Assigned</span> This</h1>
+    </div>
+    <p class="sub">A two-week course in agency, for someone who's already good at homework.</p>
+    <div class="hero-cols">
+      <div>
+        <p class="big-idea">You're very good at doing what's asked. This course is about the other skill: noticing what's worth doing when nobody asks, then doing it anyway, even when you might be told no or look a little foolish. AI can now write the essay, build the website, and summarize the book in seconds. It can't pick which problem deserves your Saturday, hit send on the email you're nervous about, or own what happens after. <mark>That part is yours, and you're going to practice it for real.</mark></p>
+        <div class="rules">
+          <h2>Three rules for the whole course</h2>
+          <ol>
+            <li>A parent reviews every message to a stranger before you send it.</li>
+            <li>No spending money without a parent's OK.</li>
+            <li>AI help is always disclosed where it matters. Never hand in AI work as your own for school.</li>
+          </ol>
+        </div>
+      </div>
+      <div class="walk">
+        <h2>What you'll walk away with</h2>
+        <ul>
+          <li>A shipped project that at least one real person outside your family has used, bought, attended, or acted on</li>
+          <li>At least one cold email sent to someone you admire (a reply is a bonus; sending is the skill)</li>
+          <li>A real responsibility at home that you run on your own judgment</li>
+          <li>A working method for AI: you decide, it builds, you judge</li>
+          <li>A before/after score on 10 specific behaviors, so you can see what changed</li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <section class="part wide" id="overview">
+    <div class="part-head"><h2><span>The schedule</span></h2><p>230 guided minutes · about 5–7 hours of real-world work between sessions</p></div>
+    <div class="prose">{{OVERVIEW}}</div>
+  </section>
+
+  <section class="part" id="sessions">
+    <div class="part-head"><h2><span>The sessions</span></h2><p>Hook, reading, discussion, exercise, challenge, journal. Checkboxes remember your progress on this device.</p></div>
+    <nav class="chips" aria-label="Jump to session">{{CHIPS}}</nav>
+    {{SESSIONS}}
+  </section>
+
+  <section class="part wide rubric" id="capstone">
+    <div class="part-head"><h2><span>Capstone: ship something real</span></h2><p>Starts in Session 4 · demoed in Session 8</p></div>
+    <div class="prose">{{CAPSTONE}}</div>
+  </section>
+
+  <section class="part wide" id="journal">
+    <div class="part-head"><h2><span>Reflection journal</span></h2><p>Copy this into your own doc or notebook</p></div>
+    <div class="prose">{{JOURNAL}}</div>
+  </section>
+
+  <section class="part" id="quizzes">
+    <div class="part-head"><h2><span>Quizzes</span></h2><p>No notes, no AI, about 10 minutes each</p></div>
+    <div class="prose">{{QUIZZES}}</div>
+  </section>
+
+  <section class="part wide" id="parents">
+    <div class="part-head"><h2><span>For parents and mentors</span></h2><p>Read before Session 1 · about 10 minutes per session</p></div>
+    <div class="prose">{{PARENTS}}</div>
+    <details class="keys">
+      <summary>Answer keys <small>parents: open after the student finishes each quiz</small></summary>
+      <div class="prose">{{KEYS}}</div>
+    </details>
+  </section>
+
+  <footer>Nobody Assigned This · a two-week agency course · quotes are attributed to their authors as posted</footer>
+</main>
+
+<script>
+(function () {
+  var KEY = "nat-tasks-v1";
+  var state = {};
+  try { state = JSON.parse(localStorage.getItem(KEY) || "{}") || {}; } catch (e) { state = {}; }
+  var boxes = document.querySelectorAll("li.task input[type=checkbox]");
+  boxes.forEach(function (b) {
+    if (state[b.id]) b.checked = true;
+    b.addEventListener("change", function () {
+      state[b.id] = b.checked;
+      try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {}
+    });
+  });
+})();
+</script>
