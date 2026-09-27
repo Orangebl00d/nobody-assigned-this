@@ -97,5 +97,25 @@ page = (tpl.replace("{{OVERVIEW}}", ov_html)
            .replace("{{QUIZZES}}", quizzes)
            .replace("{{PARENTS}}", parents)
            .replace("{{KEYS}}", keys))
-OUT.write_text(page)
-print(OUT, len(page), "bytes,", task_n, "tasks")
+# Fragment for the Claude artifact (the artifact adds its own doctype/head skeleton)
+FRAG = SRC / "build/artifact.html"
+FRAG.write_text(page)
+
+# Full documents for GitHub Pages
+DESC = ("A two-week, eight-session course that teaches a 15-year-old agency through real-world "
+        "challenges, with a capstone, journal, quizzes, and a parent guide.")
+head = f"""<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="{DESC}">
+<meta property="og:title" content="Nobody Assigned This">
+<meta property="og:description" content="{DESC}">
+<meta property="og:type" content="website">
+<style>:root{{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}}body{{margin:0}}</style>
+"""
+full = head + page.replace("</style>", "</style>\n</head>\n<body>", 1) + "\n</body>\n</html>\n"
+OUT.write_text(full)
+(SRC / "index.html").write_text(full)
+print(OUT, len(full), "bytes,", task_n, "tasks")

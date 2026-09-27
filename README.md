@@ -4,7 +4,8 @@ A two-week course in agency for a 15-year-old who's already good at homework: 8 
 
 ## Start here
 
-- **Web version:** `nobody-assigned-this.html` (one self-contained page; open it in a browser)
+- **Live page:** https://orangebl00d.github.io/nobody-assigned-this/
+- **Web version file:** `nobody-assigned-this.html` (same as `index.html`; one self-contained page)
 - **Everything in one file:** `Nobody_Assigned_This_FULL_COURSE.md`
 - **Read first:** `00_README_Assumptions_and_Packaging.md`
 
